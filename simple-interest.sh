@@ -1,11 +1,26 @@
-def calcular_interes_simple(m, i, t):
-    return (m * i * t) / 100  
+#!/bin/bash
+# This script calculates simple interest given principal, annual rate of interest and time period in years.
+# Do not use this in production. Sample purpose only.
 
+# Author: Upkar Lidder (IBM)
+# Addtional Authors:
+# <your Github username>
 
-m = float(input("Ingrese el monto: "))
-i = float(input("Introduzca la tasa de interés por año (%): "))
-t = float(input("Ingresa el periodo de tiempo en años: "))
+# Input:
+# p, principal amount
+# t, time period in years
+# r, annual rate of interest
 
-interes = calcular_interes_simple(m, i, t)
+# Output:
+# simple interest = p*t*r
 
-print(f"El interés simple es: {interes}")
+echo "Enter the principal:"
+read p
+echo "Enter rate of interest per year:"
+read r
+echo "Enter time period in years:"
+read t
+
+s=$(expr $p \* $t \* $r / 100)
+echo "The simple interest is: "
+echo $s
